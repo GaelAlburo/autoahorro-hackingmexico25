@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AutoahorroApiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AutoahorroApiApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AutoahorroApiApplication.class, args);
+    }
 
 }
