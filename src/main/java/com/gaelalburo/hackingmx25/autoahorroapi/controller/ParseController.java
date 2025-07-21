@@ -5,6 +5,7 @@ import com.gaelalburo.hackingmx25.autoahorroapi.model.parse.ExpenseInput;
 import com.gaelalburo.hackingmx25.autoahorroapi.service.parse.ExpenseService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ import java.util.List;
 @RestController
 @RequestMapping("blackrock/challenge/v1/")
 @Validated
+@Tag(name = "Contructor de Transacciones", description = "Funcionalidad para enriquecer lista de gastos con los campos ceiling y remanent")
 public class ParseController {
 
     private final ExpenseService expenseService;
@@ -46,7 +48,6 @@ public class ParseController {
     )
     @PostMapping("/transactions:parse")
     public ResponseEntity<List<EnrichedExpense>> parse(@Valid @RequestBody List<ExpenseInput> expenses){
-        log.info("parse() called with {} expenses", expenses.size());
         List<EnrichedExpense> enriched = expenseService.enrichExpenses(expenses);
         return ResponseEntity.ok(enriched);
     }
