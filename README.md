@@ -72,5 +72,5 @@ docker run -p 5477:80 blk-hacking-mx-gael-alburo
 **Gael Alburo** - 
 gael.a24@outlook.com
 
-Desarrollador participante en Hacking México 2025
+Desarrollador participante en Hacking México 2025.\
 Solución desarrollada como parte del reto técnico de BlackRock
