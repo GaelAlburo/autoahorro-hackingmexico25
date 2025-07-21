@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  backend:
+    image: blk-hacking-mx-gael-alburo
+    container_name: blk-backend
+    build:
+      context: .
+    ports:
+      - "5477:80"
