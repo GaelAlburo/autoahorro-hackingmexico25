@@ -13,9 +13,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
-import java.util.Collections;
 import java.util.List;
 
+/**
+ * Filtro de seguridad que autentica las solicitudes HTTP basándose en un token configurado.
+ */
 @Slf4j
 @Component
 public class TokenAuthenticatorFilter extends OncePerRequestFilter {
@@ -23,6 +25,21 @@ public class TokenAuthenticatorFilter extends OncePerRequestFilter {
     @Value("${api.security.token}")
     private String configuredToken;
 
+    /**
+     * Procesa cada solicitud HTTP para validar el token de autorización.
+     *
+     * - Extrae el encabezado "Authorization" y verifica que comience con "Bearer ".
+     * - Compara el token recibido con un token configurado.
+     * - Si el token es válido, establece la autenticación con rol de usuario.
+     * - Si el token es inválido o falta, registra un error.
+     * - Continúa con el siguiente filtro en la cadena.
+     *
+     * @param request La solicitud HTTP entrante.
+     * @param response La respuesta HTTP.
+     * @param filterChain La cadena de filtros para continuar el procesamiento.
+     * @throws ServletException En caso de error en el filtrado.
+     * @throws IOException En caso de error de entrada/salida.
+     */
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
