@@ -1,7 +1,7 @@
-package com.gaelalburo.hackingmx25.autoahorroapi.service;
+package com.gaelalburo.hackingmx25.autoahorroapi.service.parse;
 
-import com.gaelalburo.hackingmx25.autoahorroapi.model.EnrichedExpense;
-import com.gaelalburo.hackingmx25.autoahorroapi.model.ExpenseInput;
+import com.gaelalburo.hackingmx25.autoahorroapi.model.parse.EnrichedExpense;
+import com.gaelalburo.hackingmx25.autoahorroapi.model.parse.ExpenseInput;
 
 import java.util.List;
 

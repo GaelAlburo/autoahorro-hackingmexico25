@@ -1,8 +1,8 @@
 package com.gaelalburo.hackingmx25.autoahorroapi.controller;
 
-import com.gaelalburo.hackingmx25.autoahorroapi.model.EnrichedExpense;
-import com.gaelalburo.hackingmx25.autoahorroapi.model.ExpenseInput;
-import com.gaelalburo.hackingmx25.autoahorroapi.service.ExpenseService;
+import com.gaelalburo.hackingmx25.autoahorroapi.model.parse.EnrichedExpense;
+import com.gaelalburo.hackingmx25.autoahorroapi.model.parse.ExpenseInput;
+import com.gaelalburo.hackingmx25.autoahorroapi.service.parse.ExpenseService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
